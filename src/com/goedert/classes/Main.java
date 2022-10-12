@@ -17,6 +17,9 @@ public class Main {
 		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json"));
 		Executador e = new Gson().fromJson(br, ExecutadorMysql.class);  
 		
+		System.out.println("Digite o nome do arquivo json:");
+		String nomeArquivoJson = input.nextLine();
+		
 		if(e.getSgbd().equals("mysql")) {
 			
 			Executador executador = new ExecutadorMysql();
@@ -30,16 +33,16 @@ public class Main {
 				int resp = input.nextInt();
 				
 				if(resp == 1) {
-					System.out.println(executador.mostrarSql());
+					System.out.println(executador.mostrarSql(nomeArquivoJson));
 					System.out.println("Deseja executar?\n"
 							+ "1 - Sim\n"
 							+ "2 - Não\n");
 					int resp2 = input.nextInt();
 					if(resp2 == 1) {
-						System.out.println(executador.executar());
+						System.out.println(executador.executar(nomeArquivoJson));
 					}
 				}else if(resp == 2){
-					System.out.println(executador.executar());
+					System.out.println(executador.executar(nomeArquivoJson));
 				}else {
 					System.out.println("\nFim do programa!");
 					System.exit(0);

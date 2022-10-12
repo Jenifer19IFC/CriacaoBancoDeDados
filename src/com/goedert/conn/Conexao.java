@@ -46,13 +46,13 @@ public class Conexao {
 	}
 
 
-	public Connection conecta() throws SQLException, ClassNotFoundException, FileNotFoundException {
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json"));
+	public Connection conecta(String nomeArquivoJson) throws SQLException, ClassNotFoundException, FileNotFoundException {
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\"+nomeArquivoJson+".json"));
 		Executador e = new Gson().fromJson(br, Executador.class);
 		String urlConn = "";
 		
 		if(e.getSgbd().equals("mysql")) {
-			BufferedReader br2 = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json"));
+			BufferedReader br2 = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\"+nomeArquivoJson+".json"));
 			Executador ex = new Gson().fromJson(br2, ExecutadorMysql.class);
 			urlConn = ex.urlJdbc() + "://" + ex.getConn().host + ":" +  ex.getConn().getPorta()+ "/";
 			Class.forName(ex.driverJdbc());

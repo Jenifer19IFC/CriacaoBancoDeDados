@@ -22,9 +22,9 @@ public class ExecutadorMysql extends Executador{
 		return "jdbc:mysql";
 	}
 	
-	public StringBuilder mostrarSql() throws FileNotFoundException {
+	public StringBuilder mostrarSql(String nomeArquivoJson) throws FileNotFoundException {
 		//Obtem dados do Json Objeto
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\eu.json"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\"+nomeArquivoJson+".json"));
 		Executador e = new Gson().fromJson(br, ExecutadorMysql.class); 
 		
 		StringBuilder builder = new StringBuilder();
@@ -37,17 +37,17 @@ public class ExecutadorMysql extends Executador{
 		return builder;
 	}
 	
-	public StringBuilder executar() throws FileNotFoundException, SQLException, ClassNotFoundException {
+	public StringBuilder executar(String nomeArquivoJson) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		
 		//Obtem dados do Json Objeto
-		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json"));
+		BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\"+nomeArquivoJson+".json"));
 		Executador e = new Gson().fromJson(br, ExecutadorMysql.class); 
 		System.out.println(e.toString());
 		
 
 		//Criação do DATABASE e das TABELAS
 		Conexao c = new Conexao();
-		Connection conexao = c.conecta();
+		Connection conexao = c.conecta(nomeArquivoJson);
 		StringBuilder builder = new StringBuilder();
 		
 		if(conexao != null) {

@@ -109,6 +109,9 @@ public class NovoTeste {
 		fileWriter1.close();
 		System.out.println("\nJson gravado com sucesso!\n");*/
 		
+		GeradorObjectJson g = new GeradorObjectJson();
+		g.getObjectJson();
+		
 		
 		
 		
