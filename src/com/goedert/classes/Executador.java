@@ -48,12 +48,12 @@ public class Executador {
 	public String urlJdbc() {
 		return null;
 	}
-	public StringBuilder mostrarSql(String nomeArquivoJson) throws FileNotFoundException {
+	public StringBuilder mostrarSql() throws FileNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
 	
-	public StringBuilder executar(String nomeArquivoJson) throws FileNotFoundException, SQLException, ClassNotFoundException {
+	public StringBuilder executar() throws FileNotFoundException, SQLException, ClassNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
