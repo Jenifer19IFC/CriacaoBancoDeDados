@@ -37,16 +37,16 @@ public class Main {
 				int resp = input.nextInt();
 				
 				if(resp == 1) {
-					System.out.println(executador.mostrarSql());
+					System.out.println(executador.mostrarSql(json));
 					System.out.println("Deseja executar?\n"
 							+ "1 - Sim\n"
 							+ "2 - Não\n");
 					int resp2 = input.nextInt();
 					if(resp2 == 1) {
-						System.out.println(executador.executar());
+						System.out.println(executador.executar(json));
 					}
 				}else if(resp == 2){
-					System.out.println(executador.executar());
+					System.out.println(executador.executar(json));
 				}else {
 					System.out.println("\nFim do programa!");
 					System.exit(0);
