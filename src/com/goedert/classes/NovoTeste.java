@@ -100,17 +100,16 @@ public class NovoTeste {
 		e.setSgbd("mysql");
 		
 		//Gravação no Json para gerar meu Json inicial
-		/*System.out.println("\nIniciando gravação no Json...\n");
+		System.out.println("\nIniciando gravação no Json...\n");
 		String jsonUser1 = new Gson().toJson(e);
 		System.out.println(jsonUser1);
 	    FileWriter fileWriter1 = new FileWriter("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json");
 		fileWriter1.write(jsonUser1);
 		fileWriter1.flush();
 		fileWriter1.close();
-		System.out.println("\nJson gravado com sucesso!\n");*/
+		System.out.println("\nJson gravado com sucesso!\n");
 		
-		GeradorObjectJson g = new GeradorObjectJson();
-		g.getObjectJson();
+		
 		
 		
 		
