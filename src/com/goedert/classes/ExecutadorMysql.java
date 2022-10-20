@@ -22,9 +22,9 @@ public class ExecutadorMysql extends Executador{
 		return "jdbc:mysql";
 	}
 	
-	public StringBuilder mostrarSql(String json) throws FileNotFoundException {
-		Gson gson = new Gson(); // conversor
-		Executador e = gson.fromJson(json, ExecutadorMysql.class);
+	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
+		
+		Executador e = Construtor.constroiObjetoExecutadorMysql(caminho);
 		
 		StringBuilder builder = new StringBuilder();
 		
@@ -36,14 +36,13 @@ public class ExecutadorMysql extends Executador{
 		return builder;
 	}
 	
-	public StringBuilder executar(String json) throws FileNotFoundException, SQLException, ClassNotFoundException {
+	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		
-		Gson gson = new Gson(); // conversor
-		Executador e = gson.fromJson(json, ExecutadorMysql.class);
-
+		Executador e = Construtor.constroiObjetoExecutadorMysql(caminho);
+		
 		//Criação do DATABASE e das TABELAS
 		Conexao c = new Conexao();
-		Connection conexao = c.conecta(json);
+		Connection conexao = c.conecta(caminho);
 		StringBuilder builder = new StringBuilder();
 		
 		if(conexao != null) {
@@ -53,6 +52,10 @@ public class ExecutadorMysql extends Executador{
 				PreparedStatement smt = conexao.prepareStatement(sql);
 				smt.execute();
 				//builder.append(sql);
+				
+				//Seleciona o banco criado
+				PreparedStatement use = conexao.prepareStatement("USE " + e.getDb().nome + ";");
+				use.execute();
 				
 				//Cria tabelas
 				for (int i = 0; i <e.getDb().getListTabelas().size(); i++) {
@@ -64,6 +67,7 @@ public class ExecutadorMysql extends Executador{
 				builder.append("\n\nOperação realizada com sucesso!");
 				
 			}catch (SQLException excep) {
+				System.out.println(excep);
 				builder.append("\nErro ao realizar a operação.\nSchrema ou banco de dados já existe!\n");
 			}
 		}else {

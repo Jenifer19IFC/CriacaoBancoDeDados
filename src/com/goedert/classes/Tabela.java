@@ -7,7 +7,6 @@ public class Tabela {
 
 	String nome;
 	List<Campo> listCampos = new ArrayList<>();
-	DataBase db = new DataBase();
 	
 	public String getNome() {
 		return nome;
@@ -29,7 +28,8 @@ public class Tabela {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("\n\nCREATE table " + db.getNome() + ".");
+		
+		builder.append("\n\nCREATE table ");
 		builder.append(nome + "(");
 		//For para percorrer os campos das tabelas
 		for(int i = 0; i < listCampos.size(); i++) {

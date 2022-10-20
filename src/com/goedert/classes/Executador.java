@@ -16,7 +16,8 @@ public class Executador {
 
 	Conexao conn;
 	DataBase db;
-	String sgbd;
+	//String sgbd;
+	Sgbd sgbd;
 	
 	public Conexao getConn() {
 		return conn;
@@ -34,26 +35,31 @@ public class Executador {
 		this.db = db;
 	}
 	
-	public String getSgbd() {
-		return sgbd;
-	}
-
-	public void setSgbd(String sgbd) {
-		this.sgbd = sgbd;
-	}
-
 	public String driverJdbc() {
 		return null;
 	}
+	
+	
+	public Sgbd getSgbd() {
+		return sgbd;
+	}
+	
+	public void setSgbd(Sgbd sgbd) {
+		this.sgbd = sgbd;
+	}
+
+	
+	
 	public String urlJdbc() {
 		return null;
 	}
-	public StringBuilder mostrarSql(String json) throws FileNotFoundException {
+	
+	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
 	
-	public StringBuilder executar(String json) throws FileNotFoundException, SQLException, ClassNotFoundException {
+	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
@@ -70,6 +76,12 @@ public class Executador {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	
+
+	
+
+	
 
 	
 

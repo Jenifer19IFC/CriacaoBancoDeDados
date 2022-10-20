@@ -64,10 +64,9 @@ public class NovoTeste {
 		Tabela tabela1 = new Tabela();
 		tabela1.setNome("cliente");
 		tabela1.getListCampos().add(campo4);	
-		tabela1.db.setNome("mercearia");
+		
 		
 		Tabela tabela2 = new Tabela();
-		tabela2.db.setNome("mercearia");
 		tabela2.setNome("proprietario");
 		tabela2.listCampos.add(campo2);
 		tabela2.listCampos.add(campo3);
@@ -83,9 +82,6 @@ public class NovoTeste {
 		dataBase.getListTabelas().add(tabela2);
 		dataBase.getListTabelas().add(tabela3);
 		
-		tabela2.db.setNome(dataBase.getNome());
-		tabela3.db.setNome(dataBase.getNome());
-		tabela1.db.setNome(dataBase.getNome());
 		//System.out.println(dataBase.toString());
 		
 		Conexao c = new Conexao();
@@ -94,29 +90,42 @@ public class NovoTeste {
 		c.setUsuario("root");
 		c.setSenha("");
 		
-		Executador e = new ExecutadorMysql();
+		Sgbd sgbd = new Sgbd();
+		sgbd.setNome("mysql");
+		
+		//Setando valores para Executador
+		Executador e = new Executador();
 		e.setConn(c); 
 		e.setDb(dataBase);
-		e.setSgbd("mysql");
+		//e.setSgbd("mysql");
+		e.setSgbd(sgbd);
 		
-		//Gravação no Json para gerar meu Json inicial
-		/*System.out.println("\nIniciando gravação no Json...\n");
-		String jsonUser1 = new Gson().toJson(e);
-		System.out.println(jsonUser1);
-	    FileWriter fileWriter1 = new FileWriter("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\arquivoDeDados.json");
-		fileWriter1.write(jsonUser1);
-		fileWriter1.flush();
-		fileWriter1.close();
-		System.out.println("\nJson gravado com sucesso!\n");*/
 		
-		String json = "{\"conn\":{\"usuario\":\"root\",\"senha\":\"\",\"porta\":\"3306\",\"host\":\"localhost\"},\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[{\"nome\":\"cliente\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"imovel\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}},{\"nome\":\"proprietario\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"nome\",\"pk\":false,\"nn\":false,\"uq\":true,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false},{\"tipo\":\"varchar(45)\",\"nome\":\"localizacao\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":true,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false},{\"tipo\":\"int\",\"nome\":\"id\",\"pk\":true,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":true,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}},{\"nome\":\"bens\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"imovel\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}}]},\"sgbd\":\"mysql\"}";
+		
+		//Sgbd s = new SgbdMysql();
+
+		//e.setSgbd(s);
+		//System.out.println(e.getSgbd().capturaSgbd());
+		//System.out.println(r.remeteSgbd());
+		//System.out.println(e.getSgbd().capturaSgbd());
+		
+		/*String json = "{\"conn\":{\"usuario\":\"root\",\"senha\":\"\",\"porta\":\"3306\",\"host\":\"localhost\"},\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[{\"nome\":\"cliente\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"imovel\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}},{\"nome\":\"proprietario\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"nome\",\"pk\":false,\"nn\":false,\"uq\":true,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false},{\"tipo\":\"varchar(45)\",\"nome\":\"localizacao\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":true,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false},{\"tipo\":\"int\",\"nome\":\"id\",\"pk\":true,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":true,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}},{\"nome\":\"bens\",\"listCampos\":[{\"tipo\":\"varchar(45)\",\"nome\":\"imovel\",\"pk\":false,\"nn\":true,\"uq\":false,\"b\":false,\"un\":false,\"zf\":false,\"ai\":false,\"g\":false}],\"db\":{\"nome\":\"mercearia\",\"collation\":\"utf8mb4_general_ci\",\"characterset\":\"utf8mb4\",\"listTabelas\":[]}}]},\"sgbd\":\"mysql\"}";
 		
 		Gson gson = new Gson(); // conversor
 		Executador objExecutador = gson.fromJson(json, Executador.class);
 		
-		System.out.println(objExecutador.getDb());
+		System.out.println(objExecutador.getDb());*/
 		
-		
+
+		//Gravação no Json para gerar meu Json inicial
+		System.out.println("\nIniciando gravação no Json...\n");
+		String jsonUser1 = new Gson().toJson(e);
+		System.out.println(jsonUser1);
+	    FileWriter fileWriter1 = new FileWriter("C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\aqui.json");
+		fileWriter1.write(jsonUser1);
+		fileWriter1.flush();
+		fileWriter1.close();
+		System.out.println("\nJson gravado com sucesso!\n");
 		
 		
 		

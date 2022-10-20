@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import com.goedert.classes.Construtor;
 import com.goedert.classes.DataBase;
 import com.goedert.classes.Executador;
 import com.goedert.classes.ExecutadorMysql;
@@ -46,18 +47,20 @@ public class Conexao {
 	}
 
 
-	public Connection conecta(String json) throws SQLException, ClassNotFoundException, FileNotFoundException {
+	public Connection conecta(String caminho) throws SQLException, ClassNotFoundException, FileNotFoundException {
 
-		Gson gson = new Gson(); // conversor
-		Executador e = gson.fromJson(json, Executador.class);
+		Executador e = Construtor.constroiObjetoExecutador(caminho);
+		
 		String urlConn = "";
 		
-		if(e.getSgbd().equals("mysql")) {
-			Gson gson2 = new Gson(); // conversor
-			Executador ex = gson.fromJson(json, ExecutadorMysql.class);
+		if(e.getSgbd().getNome().equals("mysql")) {
+			
+			Executador ex = Construtor.constroiObjetoExecutadorMysql(caminho);
 			
 			urlConn = ex.urlJdbc() + "://" + ex.getConn().host + ":" +  ex.getConn().getPorta()+ "/";
 			Class.forName(ex.driverJdbc());
+		}else {
+			System.out.println("Perdido!");
 		}
 		return DriverManager.getConnection(urlConn, e.getConn().getUsuario(),e.getConn().getSenha());
 	}
