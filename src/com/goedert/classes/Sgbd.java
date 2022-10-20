@@ -12,10 +12,6 @@ public class Sgbd {
 		this.nome = nome;
 	}
 
-	public String capturaSgbd() {
-		return "sgbd";
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
