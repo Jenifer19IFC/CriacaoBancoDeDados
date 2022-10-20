@@ -49,7 +49,6 @@ public class Executador {
 	}
 
 	
-	
 	public String urlJdbc() {
 		return null;
 	}

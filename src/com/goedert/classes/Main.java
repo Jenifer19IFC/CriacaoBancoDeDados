@@ -16,19 +16,32 @@ public class Main {
 		
 		String caminho = "C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\finallyExecutador.json";
 		
-		if(Construtor.constroiObjetoExecutador(caminho).getSgbd().getNome().equals("mysql")){
+		
+			Executador e = new ExecutadorMysql();
+			
+			System.out.println(e.mostrarSql(caminho));
+			System.out.println(e.executar(caminho));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*if(Construtor.constroiObjetoExecutador(caminho).getSgbd().getNome().equals("mysql")){
 			Executador e = Construtor.constroiObjetoExecutadorMysql(caminho);
 			System.out.println(e.mostrarSql(caminho));
 			System.out.println(e.executar(caminho));
-		}
-		
-		
-		
-		
-		
-		
-		
-		
+		}*/
 		
 		
 		//Executador e = new Executador();
