@@ -16,11 +16,12 @@ public class Construtor {
 		return e;
 	}
 	
-	public static Executador constroiObjetoExecutadorMysql(String caminho) throws FileNotFoundException {
+	/*public static Executador constroiObjetoExecutadorMysql(String caminho) throws FileNotFoundException {
 		
 		BufferedReader br = new BufferedReader(new FileReader(caminho));
 		Executador e = new Gson().fromJson(br, ExecutadorMysql.class); 
 		
 		return e;
-	}
+	}*/
+	
 }

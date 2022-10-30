@@ -12,6 +12,8 @@ import com.goedert.classes.Construtor;
 import com.goedert.classes.DataBase;
 import com.goedert.classes.Executador;
 import com.goedert.classes.ExecutadorMysql;
+import com.goedert.classes.FabricaDeExecutador;
+import com.goedert.classes.FabricaDeExecutadorMysql;
 import com.google.gson.Gson;
 
 public class Conexao {
@@ -55,7 +57,8 @@ public class Conexao {
 		
 		if(e.getSgbd().getNome().equals("mysql")) {
 			
-			Executador ex = Construtor.constroiObjetoExecutadorMysql(caminho);
+			FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
+			Executador ex = fabrica.criaExecutador(caminho);
 			
 			urlConn = ex.urlJdbc() + "://" + ex.getConn().host + ":" +  ex.getConn().getPorta()+ "/";
 			Class.forName(ex.driverJdbc());

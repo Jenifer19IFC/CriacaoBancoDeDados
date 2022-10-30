@@ -16,7 +16,6 @@ public class Main {
 		
 		String caminho = "C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\finallyExecutador.json";
 		
-		
 			Executador e = new ExecutadorMysql();
 			
 			System.out.println(e.mostrarSql(caminho));

@@ -24,7 +24,8 @@ public class ExecutadorMysql extends Executador{
 	
 	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		
-		Executador e = Construtor.constroiObjetoExecutadorMysql(caminho);
+		FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
+		Executador e = fabrica.criaExecutador(caminho);
 		
 		StringBuilder builder = new StringBuilder();
 		
@@ -38,7 +39,8 @@ public class ExecutadorMysql extends Executador{
 	
 	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		
-		Executador e = Construtor.constroiObjetoExecutadorMysql(caminho);
+		FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
+		Executador e = fabrica.criaExecutador(caminho);
 		
 		//Criação do DATABASE e das TABELAS
 		Conexao c = new Conexao();
