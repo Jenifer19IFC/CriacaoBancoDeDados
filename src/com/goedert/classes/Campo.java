@@ -218,7 +218,10 @@ public class Campo {
 			}
 		}
 		else if(tipo.equals("varchar(45)")) {
-			if(pk && nn == false && uq == false && b == false && un == false && zf == false && ai == false && g == false) {
+			if(pk == false && nn == false && uq == false && b == false && un == false && zf == false && ai == false && g == false) {
+				builder.append("\n " + nome + " VARCHAR(45) NULL");
+			}
+			else if(pk && nn == false && uq == false && b == false && un == false && zf == false && ai == false && g == false) {
 				builder.append("\n "+ nome + " VARCHAR(45) NULL,\r\n"
 						+ " PRIMARY KEY (" + nome + ")");
 			}else if(pk && nn && uq == false && b == false && un == false && zf == false && ai == false && g == false) {

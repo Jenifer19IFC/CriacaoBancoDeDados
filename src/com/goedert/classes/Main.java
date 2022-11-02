@@ -16,10 +16,23 @@ public class Main {
 		
 		String caminho = "C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\finallyExecutador.json";
 		
-			Executador e = new ExecutadorMysql();
+		Facade facade = new Facade();
+		
+		System.out.println(facade.showSql(caminho));
+		System.out.println(facade.start(caminho));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			/*Executador e = new ExecutadorMysql();
 			
 			System.out.println(e.mostrarSql(caminho));
-			System.out.println(e.executar(caminho));
+			System.out.println(e.executar(caminho));*/
 		
 		
 		
