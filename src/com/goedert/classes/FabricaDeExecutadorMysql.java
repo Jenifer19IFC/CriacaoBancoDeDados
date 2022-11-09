@@ -6,8 +6,17 @@ import java.io.FileReader;
 
 import com.google.gson.Gson;
 
+/**
+ * Classe implementadora Mysql da interface FabricaDeExecutador
+ * 
+ * @author Jenifer
+ *
+ */
 public class FabricaDeExecutadorMysql implements FabricaDeExecutador{
 
+	/**
+	 * @return objeto Executador Mysql construído a partir do arquivo Json
+	 */
 	@Override
 	public Executador criaExecutador(String caminho) {
 		

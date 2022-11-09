@@ -1,8 +1,13 @@
 package com.goedert.classes;
-
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe estrutural de Data Base
+ * 
+ * @author jenifergoedert10@gmail.com
+ *
+ */
 public class DataBase {
 	
 	String nome;
@@ -36,6 +41,12 @@ public class DataBase {
 	public void setListTabelas(List<Tabela> listTabelas) {
 		this.listTabelas = listTabelas;
 	}
+	
+	/**
+	 * Método que cria comando Sql do Data Base
+	 * 
+	 * @return StringBuilder
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

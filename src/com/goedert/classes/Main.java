@@ -8,18 +8,33 @@ import java.util.Scanner;
 
 import com.google.gson.Gson;
 
-public class Main {
+/**
+ * Classe que apresenta somente os métodos principais do projeto: Mostrar Sql e Executar Sql
+ * Tem como entrada um caminho de um arquivo Json
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ * @param caminho
+ */
 
+public class Main {
+	
+	/**
+	 * @param args
+	 * @throws FileNotFoundException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		
 		Scanner input = new Scanner(System.in);
 		
-		String caminho = "C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\finallyExecutador.json";
+		String caminho = "C:\\Users\\Jenifer\\Documents\\Github\\POO II\\Trabalho1\\src\\aqui.json";
 		
-		Facade facade = new Facade();
+		SGBDFacade facade = new SGBDFacade(caminho);
 		
-		System.out.println(facade.showSql(caminho));
-		System.out.println(facade.start(caminho));
+		System.out.println(facade.showSql());
+		System.out.println(facade.start());
 		
 		
 		

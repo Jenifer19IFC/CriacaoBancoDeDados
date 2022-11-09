@@ -1,11 +1,17 @@
 package com.goedert.classes;
-
 import java.util.Iterator;
+
+/**
+ * Classe estrutural de Campo
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ */
 
 import com.goedert.classes.Tabela;
 public class Campo {
 	
-	String tipo;  // int, varchar(45), date
+	String tipo;  
 	String nome;
 	boolean pk;
 	boolean nn;
@@ -96,6 +102,11 @@ public class Campo {
 		this.g = g;
 	}
 
+	/**
+	 * Método que cria comandos Sql de acordo com a definição das chaves da tabela
+	 * 
+	 * @return StringBuilder - comandos Sql
+	 */
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		

@@ -3,6 +3,14 @@ package com.goedert.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysql.cj.x.protobuf.Mysqlx.ClientMessages.Builder;
+
+/**
+ * Classse estrutural da Tabela
+ * 
+ * @author jenifergoedert10@gmail.com
+ *
+ */
 public class Tabela {
 
 	String nome;
@@ -24,7 +32,11 @@ public class Tabela {
 		this.listCampos = listCampos;
 	}
 
-	
+	/**
+	 * Método que cria Sql da Tabela
+	 * 
+	 * @return StringBuilder
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -42,13 +54,6 @@ public class Tabela {
 		return builder.toString();
 	}
 
-	
-	
-
-
-	//CREATE TABLE nome...
-
-	
 	
 	
 	

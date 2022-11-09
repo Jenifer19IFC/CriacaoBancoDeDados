@@ -12,11 +12,16 @@ import java.util.List;
 import com.goedert.conn.Conexao;
 import com.google.gson.Gson;
 
+/**
+ * Classe que contém a estrutura principal do projeto
+ * 
+ * @author jenifergoedert10@gmail.com
+ *
+ */
 public class Executador {
 
 	Conexao conn;
 	DataBase db;
-	//String sgbd;
 	Sgbd sgbd;
 	
 	public Conexao getConn() {
@@ -53,16 +58,32 @@ public class Executador {
 		return null;
 	}
 	
+	/**
+	 * Método genérico que mostra comandos Sql
+	 * 
+	 * @param caminho
+	 * @return StringBuilder
+	 * @throws FileNotFoundException
+	 */
 	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
 	
+	/**
+	 * Método genérico de execução de comandos Sql
+	 * 
+	 * @param caminho
+	 * @return StringBuilder
+	 * @throws FileNotFoundException
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 */
 	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		StringBuilder builder = new StringBuilder();
 		return builder;
 	}
-
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

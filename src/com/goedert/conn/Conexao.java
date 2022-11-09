@@ -16,6 +16,12 @@ import com.goedert.classes.FabricaDeExecutador;
 import com.goedert.classes.FabricaDeExecutadorMysql;
 import com.google.gson.Gson;
 
+/**
+ * Classe genérica de conexão com Banco de Dados
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ */
 public class Conexao {
 
 	String usuario;
@@ -48,7 +54,13 @@ public class Conexao {
 		this.host = host;
 	}
 
-
+	/**
+	 * @param caminho
+	 * @return Conexão
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
+	 * @throws FileNotFoundException
+	 */
 	public Connection conecta(String caminho) throws SQLException, ClassNotFoundException, FileNotFoundException {
 
 		Executador e = Construtor.constroiObjetoExecutador(caminho);

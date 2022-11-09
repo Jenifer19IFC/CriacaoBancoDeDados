@@ -9,6 +9,12 @@ import org.json.simple.JSONObject;
 import com.goedert.conn.Conexao;
 import com.google.gson.Gson;
 
+/**
+ * Classe teste para setar valores nos objetos e assim gerar um arquivo Json
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ */
 public class NovoTeste {
 
 	public static void main(String[] args) throws IOException {

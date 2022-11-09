@@ -1,5 +1,11 @@
 package com.goedert.classes;
 
+/**
+ * Classe estrutural do Sgdb
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ */
 public class Sgbd {
 
 	String nome;

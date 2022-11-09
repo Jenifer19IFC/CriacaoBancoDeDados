@@ -12,16 +12,38 @@ import java.util.List;
 import com.goedert.conn.Conexao;
 import com.google.gson.Gson;
 
+/**
+ * Classe estrutural de Executador Mysql que extende classe Executador
+ * 
+ * @author jenifergoedert10@gmail.com
+ * 
+ *
+ */
 public class ExecutadorMysql extends Executador{
 	
+	/**
+	 * @return String - driverJdbc de conexão do Sgbd Mysql 
+	 */
 	public String driverJdbc() {
 		return "com.mysql.cj.jdbc.Driver";
 	}
 	
+	/**
+	 * @return String - urlJdbc  de conexão do Sgbd Mysql
+	 */
 	public String urlJdbc() {
 		return "jdbc:mysql";
 	}
 	
+	/**
+	 * @param caminho
+	 * 
+	 *  @see FabricaDeExecutadorMysql
+	 *  @see Executador
+	 *  @see ExecutadorMysql
+	 * 
+	 * @return StringBuilder - comandos Sql de criação de Data Base e tabelas
+	 */
 	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		
 		FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
@@ -37,6 +59,17 @@ public class ExecutadorMysql extends Executador{
 		return builder;
 	}
 	
+	/**
+	 * @param caminho
+	 * 
+	 *  @see FabricaDeExecutadorMysql
+	 *  @see Conexao
+	 *  @see Executador
+	 *  @see ExecutadorMysql
+	 *  
+	 *  @return  StringBuilder - resultado da execução dos comandos Sql
+	 * 
+	 */
 	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		
 		FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
