@@ -13,7 +13,6 @@ import com.google.gson.Gson;
  * Classe teste para setar valores nos objetos e assim gerar um arquivo Json
  * 
  * @author jenifergoedert10@gmail.com
- * 
  */
 public class NovoTeste {
 

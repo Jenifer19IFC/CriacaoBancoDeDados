@@ -44,12 +44,6 @@ public class Main {
 		
 		
 		
-			/*Executador e = new ExecutadorMysql();
-			
-			System.out.println(e.mostrarSql(caminho));
-			System.out.println(e.executar(caminho));*/
-		
-		
 		
 		
 		

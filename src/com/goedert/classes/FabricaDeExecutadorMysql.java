@@ -15,7 +15,9 @@ import com.google.gson.Gson;
 public class FabricaDeExecutadorMysql implements FabricaDeExecutador{
 
 	/**
-	 * @return objeto Executador Mysql construído a partir do arquivo Json
+	 * Cria ExecutadorMysql construído a partir do arquivo Json
+	 * @param caminho
+	 * @return Executador 
 	 */
 	@Override
 	public Executador criaExecutador(String caminho) {

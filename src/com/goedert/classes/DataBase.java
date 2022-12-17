@@ -45,7 +45,7 @@ public class DataBase {
 	/**
 	 * Método que cria comando Sql do Data Base
 	 * 
-	 * @return StringBuilder
+	 * @return String
 	 */
 	@Override
 	public String toString() {

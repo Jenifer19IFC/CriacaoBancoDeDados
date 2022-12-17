@@ -3,9 +3,8 @@ import java.util.Iterator;
 
 /**
  * Classe estrutural de Campo
- * 
+ *
  * @author jenifergoedert10@gmail.com
- * 
  */
 
 import com.goedert.classes.Tabela;
@@ -105,7 +104,7 @@ public class Campo {
 	/**
 	 * Método que cria comandos Sql de acordo com a definição das chaves da tabela
 	 * 
-	 * @return StringBuilder - comandos Sql
+	 * @return String 
 	 */
 	public String toString() {
 		StringBuilder builder = new StringBuilder();

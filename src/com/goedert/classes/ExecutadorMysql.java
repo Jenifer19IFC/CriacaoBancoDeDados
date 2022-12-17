@@ -16,33 +16,32 @@ import com.google.gson.Gson;
  * Classe estrutural de Executador Mysql que extende classe Executador
  * 
  * @author jenifergoedert10@gmail.com
- * 
- *
  */
 public class ExecutadorMysql extends Executador{
 	
 	/**
-	 * @return String - driverJdbc de conexão do Sgbd Mysql 
+	 * DriverJdbc de conexão do Sgbd Mysql
+	 * 
+	 * @return String 
 	 */
 	public String driverJdbc() {
 		return "com.mysql.cj.jdbc.Driver";
 	}
 	
 	/**
-	 * @return String - urlJdbc  de conexão do Sgbd Mysql
+	 * UrlJdbc  de conexão do Sgbd Mysql
+	 * 
+	 * @return String 
 	 */
 	public String urlJdbc() {
 		return "jdbc:mysql";
 	}
 	
 	/**
+	 * Mostrar comandos Sql de criação de Data Base e tabelas
+	 * 
 	 * @param caminho
-	 * 
-	 *  @see FabricaDeExecutadorMysql
-	 *  @see Executador
-	 *  @see ExecutadorMysql
-	 * 
-	 * @return StringBuilder - comandos Sql de criação de Data Base e tabelas
+	 * @return StringBuilder -
 	 */
 	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		
@@ -60,15 +59,10 @@ public class ExecutadorMysql extends Executador{
 	}
 	
 	/**
+	 * Execução dos comandos Sql
+	 * 
 	 * @param caminho
-	 * 
-	 *  @see FabricaDeExecutadorMysql
-	 *  @see Conexao
-	 *  @see Executador
-	 *  @see ExecutadorMysql
-	 *  
-	 *  @return  StringBuilder - resultado da execução dos comandos Sql
-	 * 
+	 * @return  StringBuilder 
 	 */
 	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		

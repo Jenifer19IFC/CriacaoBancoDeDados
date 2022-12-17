@@ -27,15 +27,9 @@ public class SGBDFacade {
 	
 	
 	/**
-	 * @param caminho
+	 * Método de mostrar Sql do Executador de acordo com o arquivo Json
 	 * 
-	 * @see Executador
-	 * @see ExecutadorMysql
-	 * @see FabricaDeExecutadorMysql
-	 * @see Construtor
-	 * 
-	 * @return StringBuilder - método de mostrar Sql do Executador de acordo com o arquivo Json
-	 * @throws FileNotFoundException
+	 * @return StringBuilder
 	 */
 	public StringBuilder showSql() throws FileNotFoundException {
 		
@@ -52,14 +46,9 @@ public class SGBDFacade {
 	}
 	
 	/**
+	 * Método de resultado da execução de Sql do Executador de acordo com o arquivo Json
 	 * 
-	 * @see Executador
-	 * @see ExecutadorMysql
-	 * @see FabricaDeExecutadorMysql
-	 * @see Construtor
-	 * 
-	 * @return método de resultado da execução de Sql do Executador de acordo com o arquivo Json
-	 * @throws FileNotFoundException
+	 * @return StringBuilder
 	 */
 	public StringBuilder start() throws FileNotFoundException, ClassNotFoundException, SQLException {
 		Executador e = Construtor.constroiObjetoExecutador(caminho);

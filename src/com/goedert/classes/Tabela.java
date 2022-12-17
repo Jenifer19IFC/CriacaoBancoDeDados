@@ -35,7 +35,7 @@ public class Tabela {
 	/**
 	 * Método que cria Sql da Tabela
 	 * 
-	 * @return StringBuilder
+	 * @return String
 	 */
 	@Override
 	public String toString() {

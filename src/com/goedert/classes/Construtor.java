@@ -9,15 +9,15 @@ import com.google.gson.Gson;
  * Classe construtora de Objeto Executador 
  * 
  * @author jenifergoedert10@gmail.com
- * 
  */
 
 public class Construtor {
 
 	/**
+	 * Executador construído a partir do arquivo Json
+	 * 
 	 * @param caminho
-	 * @return objeto Executador construído a partir do Json
-	 * @throws FileNotFoundException
+	 * @return Executador 
 	 */
 	public static Executador constroiObjetoExecutador(String caminho) throws FileNotFoundException {
 		

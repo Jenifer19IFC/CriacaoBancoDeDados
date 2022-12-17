@@ -55,11 +55,9 @@ public class Conexao {
 	}
 
 	/**
+	 * Método de conexão com banco de dados
 	 * @param caminho
-	 * @return Conexão
-	 * @throws SQLException
-	 * @throws ClassNotFoundException
-	 * @throws FileNotFoundException
+	 * @return Connection
 	 */
 	public Connection conecta(String caminho) throws SQLException, ClassNotFoundException, FileNotFoundException {
 

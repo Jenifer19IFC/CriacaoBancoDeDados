@@ -16,7 +16,6 @@ import com.google.gson.Gson;
  * Classe que contém a estrutura principal do projeto
  * 
  * @author jenifergoedert10@gmail.com
- *
  */
 public class Executador {
 
@@ -63,7 +62,6 @@ public class Executador {
 	 * 
 	 * @param caminho
 	 * @return StringBuilder
-	 * @throws FileNotFoundException
 	 */
 	public StringBuilder mostrarSql(String caminho) throws FileNotFoundException {
 		StringBuilder builder = new StringBuilder();
@@ -75,9 +73,6 @@ public class Executador {
 	 * 
 	 * @param caminho
 	 * @return StringBuilder
-	 * @throws FileNotFoundException
-	 * @throws SQLException
-	 * @throws ClassNotFoundException
 	 */
 	public StringBuilder executar(String caminho) throws FileNotFoundException, SQLException, ClassNotFoundException {
 		StringBuilder builder = new StringBuilder();
