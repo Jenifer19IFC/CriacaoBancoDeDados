@@ -1,5 +1,6 @@
 package com.goedert.classes;
 import java.util.Iterator;
+import com.goedert.classes.Tabela; 
 
 /**
  * Classe estrutural de Campo
@@ -7,7 +8,7 @@ import java.util.Iterator;
  * @author jenifergoedert10@gmail.com
  */
 
-import com.goedert.classes.Tabela;
+
 public class Campo {
 	
 	String tipo;  

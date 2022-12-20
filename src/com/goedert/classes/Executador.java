@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 /**
  * Classe que contém a estrutura principal do projeto
  * 
- * @author jenifergoedert10@gmail.com
+ * @author jenifergoedert10@gmail.com	
  */
 public class Executador {
 

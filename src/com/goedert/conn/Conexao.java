@@ -59,7 +59,8 @@ public class Conexao {
 	 * @param caminho
 	 * @return Connection
 	 */
-	public Connection conecta(String caminho) throws SQLException, ClassNotFoundException, FileNotFoundException {
+	public Connection conecta(String caminho) throws 
+	SQLException, ClassNotFoundException, FileNotFoundException {
 
 		Executador e = Construtor.constroiObjetoExecutador(caminho);
 		
@@ -70,12 +71,14 @@ public class Conexao {
 			FabricaDeExecutador fabrica = new FabricaDeExecutadorMysql();
 			Executador ex = fabrica.criaExecutador(caminho);
 			
-			urlConn = ex.urlJdbc() + "://" + ex.getConn().host + ":" +  ex.getConn().getPorta()+ "/";
+			urlConn = ex.urlJdbc() + "://" + ex.getConn().host + ":" +
+			ex.getConn().getPorta()+ "/";
 			Class.forName(ex.driverJdbc());
 		}else {
-			System.out.println("Perdido!");
+			System.out.println("Sgbd não identificado!");
 		}
-		return DriverManager.getConnection(urlConn, e.getConn().getUsuario(),e.getConn().getSenha());
+		return DriverManager.getConnection(urlConn, e.getConn().getUsuario(),
+				e.getConn().getSenha());
 	}
 	
 	@Override
